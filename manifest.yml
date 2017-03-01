@@ -1,8 +1,13 @@
 applications:
-- name: Kitura-Starter
+- path: .
   memory: 256M
   instances: 1
-  random-route: true
+  domain: mybluemix.net
+  name: boardTestPE
+  host: boardTestPE
   disk_quota: 1024M
-  command: Kitura-Starter
+  services:
+  - availability-monitoring-auto
+  - Cloudant NoSQL DB-si
   buildpack: swift_buildpack
+  command: kitura-helloworld
